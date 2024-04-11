@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Alumno</title>
+    <link rel="stylesheet" href="stylinterfazmaestro.css">
+	
+	 
+<div class="contenido">
+  <!-- Aquí va el contenido de tu página -->
+</div>	
+</head>
+<body>
+
+   
+	<div class="menu">
+
+	<nav>
+        <ul>
+            <li><a href="#crear_curso">Crear Curso</a></li>
+            <li><a href="#ver_estudiantes">Ver Estudiantes</a></li>
+            <li><a href="#evaluar_curso">Evaluar Curso</a></li>
+        </ul>
+    </nav>
+		 <img src="imagenes/insti.png" alt="Logo" class="logo">
+		</div>	
+	
+		 <header> 
+        <h1>Interfaz del Maestro</h1>
+    </header>
+		
+    <div class="container">
+        <section id="crear_curso">
+            <h2>Crear Curso</h2>
+            <!-- Formulario para crear un nuevo curso -->
+            <form action="agrecurso.php" method="get">
+				<label for="codigo">Codigo:</label>
+                <input type="text" id="codigo" name="codigo" required><br><br>
+                <label for="nombre_curso">Nombre del Curso:</label>
+                <input type="text" id="curso" name="curso" required><br><br>
+                <button type="submit">Crear Curso</button>
+            </form>
+			
+        </section>
+        
+        <section id="ver_estudiantes">
+            <h2>Ver Estudiantes Matriculados</h2>
+            <!-- Aquí se mostrarán los estudiantes matriculados en el curso -->
+            <div class="curso">
+                <h3>Nombre del Curso</h3>
+                <ul>
+                    <li>Estudiante 1</li>
+                    <li>Estudiante 2</li>
+                    <li>Estudiante 3</li>
+                    <!-- Agrega más estudiantes según sea necesario -->
+                </ul>
+            </div>
+        </section>
+        
+        <section id="evaluar_curso">
+            <h2>Evaluar Curso</h2>
+            <!-- Formulario para evaluar el curso -->
+            <form action="evaluar_curso.php" method="POST">
+                <label for="calificacion">Calificación del Curso:</label>
+                <input type="number" id="calificacion" name="calificacion" min="0" max="10" step="0.1" required><br><br>
+                <button type="submit">Evaluar Curso</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Alumno</title>
+    <link rel="stylesheet" href="stiloregistro.css">
+	
+	 <div class="menu">
+  <ul>
+    <li><a href="INICIO.html">Inicio</a></li>
+  
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  <li class="derecha"><a href="registro.html">Registrarse</a></li>
+	  <li class="derecha"><a href="iniciarse.html">Iniciar Sesión</a></li>
+  </ul>
+</div>
+
+
+<div class="contenido">
+  <!-- Aquí va el contenido de tu página -->
+</div>	
+</head>
+<body>
+<div class="container">
+        <div class="login-box">
+            <h1>Registro</h1>
+            <div class="opcion">
+                <select id="rol" name="rol" onchange="mostrarClaveMaestra()">
+                    <option value="">Selecciona un rol</option>
+                    <option value="regicomoalumno.html">Alumno</option>
+                    <option value="regicomomaestro.html">Maestro</option>
+                </select>
+            </div>
+            <div class="clave-maestra">
+                <label for="clave_maestra">Clave de Maestro:</label>
+                <input type="password" id="clave_maestra" name="clave_maestra" placeholder="clave de maestro" required ><br><br>
+            </div>
+            <div align="center" class="form-group">
+                <button type="button" onclick="validarRegistro()">Registrarse</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function mostrarClaveMaestra() {
+            var rol = document.getElementById("rol").value;
+            var campoClaveMaestra = document.querySelector('.clave-maestra');
+            
+            if (rol === "regicomomaestro.html") {
+                campoClaveMaestra.style.display = "block"; // Mostrar el campo de clave maestra si se selecciona "Maestro"
+            } else {
+                campoClaveMaestra.style.display = "none"; // Ocultar el campo de clave maestra en caso contrario
+            }
+        }
+
+        function validarRegistro() {
+            var rol = document.getElementById("rol").value;
+            var claveMaestra = document.getElementById("clave_maestra").value;
+
+            if (rol === "regicomomaestro.html") {
+                // Verificar la clave maestra
+                if (claveMaestra === "1234") { // Reemplaza "tu_clave_maestra" con la clave maestra correcta
+                    window.location.href = rol; // Redirigir a la página de registro de maestro
+                } else {
+                    alert("Clave de maestro incorrecta.");
+                }
+            } else {
+                window.location.href = rol; // Redirigir a la página de registro de alumno
+            }
+        }
+    </script>
+</body>
+</html>
